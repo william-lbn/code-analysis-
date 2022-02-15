@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>第1章 knative架构 on knative</title>
-    <link>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/</link>
+    <link>https://william-lbn.github.io/code-analysis-/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/</link>
     <description>Recent content in 第1章 knative架构 on knative</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://william-lbn.github.io/code-analysis-/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

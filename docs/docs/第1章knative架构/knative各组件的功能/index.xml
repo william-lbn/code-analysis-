@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>1.3 knative各组件的功能 on knative</title>
-    <link>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%90%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/</link>
+    <link>https://william-lbn.github.io/code-analysis-/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%90%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/</link>
     <description>Recent content in 1.3 knative各组件的功能 on knative</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%90%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://william-lbn.github.io/code-analysis-/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%90%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
