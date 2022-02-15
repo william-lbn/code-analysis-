@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en-us" dir="ltr">
+<head>
+	<meta name="generator" content="Hugo 0.91.2" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="knative源码剖析 #  knative 架构 #  knative的发展历史 #  knative架构图 #  knative各组件的功能 #  serverless机遇与挑战 #  knative构建过程 #  构建方式
+本地环境构建
+knative核心数据结构 #  测试4 #  Idmoniae ripis, at aves, ali missa adest, ut et autem, et ab?">
+<meta name="theme-color" content="#FFFFFF">
+<meta name="color-scheme" content="light dark"><meta property="og:title" content="介绍" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://example.org/" />
+
+<title>介绍 | knative</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.82c5dbd23447cee0b4c2aa3ed08ce0961faa40e1fa370eee4f8c9f02e0d46b5f.css" integrity="sha256-gsXb0jRHzuC0wqo&#43;0Izglh&#43;qQOH6Nw7uT4yfAuDUa18=" crossorigin="anonymous">
+  <script defer src="/flexsearch.min.js"></script>
+  <script defer src="/en.search.min.6abf6666e75ce466f069b14738ca8bef628f0e503bb18833915e50bc20049966.js" integrity="sha256-ar9mZudc5GbwabFHOMqL72KPDlA7sYgzkV5QvCAEmWY=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="http://example.org/index.xml" title="knative" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/"><span>knative</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/" class="">第1章 knative架构</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1a2a489279da092562432c84f3c5a052" class="toggle"  />
+    <label for="section-1a2a489279da092562432c84f3c5a052" class="flex justify-between">
+      <a role="button" class="">1.1 knative发展史</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7b1c8c22426ae19da8500c85a09e7545" class="toggle"  />
+    <label for="section-7b1c8c22426ae19da8500c85a09e7545" class="flex justify-between">
+      <a role="button" class="">1.2 knative架构图</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7d1dda8bc93ed522a690ad72ce4d52ad" class="toggle"  />
+    <label for="section-7d1dda8bc93ed522a690ad72ce4d52ad" class="flex justify-between">
+      <a role="button" class="">1.3 knative各组件的功能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0f4caa5b20ff1be7670075ff86331534" class="toggle"  />
+    <label for="section-0f4caa5b20ff1be7670075ff86331534" class="flex justify-between">
+      <a role="button" class="">1.4 knative设计</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>介绍</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#knative-架构">knative 架构</a>
+      <ul>
+        <li><a href="#knative的发展历史">knative的发展历史</a></li>
+        <li><a href="#knative架构图">knative架构图</a></li>
+        <li><a href="#knative各组件的功能">knative各组件的功能</a></li>
+        <li><a href="#serverless机遇与挑战">serverless机遇与挑战</a></li>
+      </ul>
+    </li>
+    <li><a href="#knative构建过程">knative构建过程</a></li>
+    <li><a href="#knative核心数据结构">knative核心数据结构</a></li>
+    <li><a href="#测试4">测试4</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="knative源码剖析">
+  knative源码剖析
+  <a class="anchor" href="#knative%e6%ba%90%e7%a0%81%e5%89%96%e6%9e%90">#</a>
+</h1>
+<h2 id="knative-架构">
+  knative 架构
+  <a class="anchor" href="#knative-%e6%9e%b6%e6%9e%84">#</a>
+</h2>
+<h3 id="knative的发展历史">
+  knative的发展历史
+  <a class="anchor" href="#knative%e7%9a%84%e5%8f%91%e5%b1%95%e5%8e%86%e5%8f%b2">#</a>
+</h3>
+<h3 id="knative架构图">
+  knative架构图
+  <a class="anchor" href="#knative%e6%9e%b6%e6%9e%84%e5%9b%be">#</a>
+</h3>
+<h3 id="knative各组件的功能">
+  knative各组件的功能
+  <a class="anchor" href="#knative%e5%90%84%e7%bb%84%e4%bb%b6%e7%9a%84%e5%8a%9f%e8%83%bd">#</a>
+</h3>
+<h3 id="serverless机遇与挑战">
+  serverless机遇与挑战
+  <a class="anchor" href="#serverless%e6%9c%ba%e9%81%87%e4%b8%8e%e6%8c%91%e6%88%98">#</a>
+</h3>
+<h2 id="knative构建过程">
+  knative构建过程
+  <a class="anchor" href="#knative%e6%9e%84%e5%bb%ba%e8%bf%87%e7%a8%8b">#</a>
+</h2>
+<p>构建方式</p>
+<p>本地环境构建</p>
+<h2 id="knative核心数据结构">
+  knative核心数据结构
+  <a class="anchor" href="#knative%e6%a0%b8%e5%bf%83%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">#</a>
+</h2>
+<h2 id="测试4">
+  测试4
+  <a class="anchor" href="#%e6%b5%8b%e8%af%954">#</a>
+</h2>
+<p>Idmoniae ripis, at aves, ali missa adest, ut <em>et autem</em>, et ab?</p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function a(c){const a=window.getSelection(),b=document.createRange();b.selectNodeContents(c),a.removeAllRanges(),a.addRange(b)}document.querySelectorAll("pre code").forEach(b=>{b.addEventListener("click",function(c){a(b.parentElement),navigator.clipboard&&navigator.clipboard.writeText(b.parentElement.textContent)})})})()</script>
+
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#knative-架构">knative 架构</a>
+      <ul>
+        <li><a href="#knative的发展历史">knative的发展历史</a></li>
+        <li><a href="#knative架构图">knative架构图</a></li>
+        <li><a href="#knative各组件的功能">knative各组件的功能</a></li>
+        <li><a href="#serverless机遇与挑战">serverless机遇与挑战</a></li>
+      </ul>
+    </li>
+    <li><a href="#knative构建过程">knative构建过程</a></li>
+    <li><a href="#knative核心数据结构">knative核心数据结构</a></li>
+    <li><a href="#测试4">测试4</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

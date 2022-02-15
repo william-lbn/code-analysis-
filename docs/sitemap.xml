@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/</loc>
+  </url><url>
+    <loc>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%8F%91%E5%B1%95%E5%8F%B2/</loc>
+  </url><url>
+    <loc>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E6%9E%B6%E6%9E%84%E5%9B%BE/</loc>
+  </url><url>
+    <loc>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E5%90%84%E7%BB%84%E4%BB%B6%E7%9A%84%E5%8A%9F%E8%83%BD/</loc>
+  </url><url>
+    <loc>http://example.org/docs/%E7%AC%AC1%E7%AB%A0knative%E6%9E%B6%E6%9E%84/knative%E8%AE%BE%E8%AE%A1/</loc>
+  </url><url>
+    <loc>http://example.org/categories/</loc>
+  </url><url>
+    <loc>http://example.org/docs/</loc>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
+  </url><url>
+    <loc>http://example.org/</loc>
+  </url>
+</urlset>
